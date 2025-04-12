@@ -1,0 +1,5 @@
+RUNNER_NAME=mi-runner
+RUNNER_REPO=https://github.com/tu_usuario
+RUNNER_TOKEN=token_de_registro
+RUNNER_VERSION=2.323.0
+RUNNER_USER=runneruser

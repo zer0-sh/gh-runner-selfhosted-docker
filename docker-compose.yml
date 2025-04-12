@@ -1,0 +1,12 @@
+services:
+  runner:
+    build:
+      context: .
+      args:
+        RUNNER_USER: ${RUNNER_USER}
+    image: personal-runner:latest 
+    container_name: github-runner
+    env_file:
+      - .env
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
