@@ -6,7 +6,7 @@ ENV TZ=America/Bogota
 RUN apt-get update && apt-get install -y tzdata
 
 RUN apt-get update && \
-    apt-get install -y curl jq git sudo ca-certificates && \
+    apt-get install -y curl jq git sudo ca-certificates libicu-dev && \
     apt-get clean \
     ./bin/installdependencies.sh || true
 
