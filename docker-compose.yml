@@ -1,7 +1,7 @@
 services:
   runner:
     build:
-      context: .
+      context: ./docker
       args:
         RUNNER_USER: ${RUNNER_USER}
     image: personal-runner:latest 

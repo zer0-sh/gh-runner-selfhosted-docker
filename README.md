@@ -37,14 +37,14 @@ Este proyecto te permite levantar un **runner auto-hospedado de GitHub Actions**
 1. Clona este repositorio:
 
    ```bash
-   git clone https://github.com/tu_usuario/github-selfhosted-runner.git
-   cd github-selfhosted-runner
+   git clone https://github.com/zer0-sh/gh-runner-selfhosted-docker.git
+   cd gh-runner-selfhosted-docker
    ```
 
-2. Copia el archivo de variables de entorno:
+2. Copia el archivo de variables de entorno desde la carpeta config a la raíz:
 
    ```bash
-   cp .env.example .env
+   cp /config/.env.example .env
    ```
 
 3. Edita el archivo `.env` con tus datos:
