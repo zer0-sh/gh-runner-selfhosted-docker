@@ -18,21 +18,24 @@ if [ ! -f "./config.sh" ]; then
   tar xzf "$RUNNER_TGZ"
   rm "$RUNNER_TGZ"
 
-   # Instalar dependencias de .NET necesarias
+  # Instalar dependencias de .NET necesarias
   echo "Instalando dependencias de .NET para el runner..."
   sudo ./bin/installdependencies.sh || true
+
+  # Configurar el runner solo si no está configurado
+  echo "Configurando el runner..."
+  ./config.sh --unattended \
+    --url "$RUNNER_REPO" \
+    --token "$RUNNER_TOKEN" \
+    --name "$RUNNER_NAME" \
+    --work _work \
+    --replace
+else
+  echo "El runner ya está configurado."
 fi
 
 # Después de descomprimir el runner
 chown -R "${RUNNER_USER}:${RUNNER_USER}" "$RUNNER_DIR"
-
-# Configurar el runner
-./config.sh --unattended \
-  --url "$RUNNER_REPO" \
-  --token "$RUNNER_TOKEN" \
-  --name "$RUNNER_NAME" \
-  --work _work \
-  --replace
 
 # Función de limpieza
 cleanup() {
