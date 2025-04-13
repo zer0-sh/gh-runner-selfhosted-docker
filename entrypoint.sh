@@ -9,6 +9,7 @@ RUNNER_DIR="/home/${RUNNER_USER}/actions-runner"
 
 # Crear carpeta y moverse
 mkdir -p "$RUNNER_DIR"
+sudo chown -R ${RUNNER_USER}:${RUNNER_USER} "$RUNNER_DIR"
 cd "$RUNNER_DIR"
 
 # Descargar el runner solo si no existe

@@ -10,4 +10,7 @@ services:
       - .env
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./runner-data:/home/${RUNNER_USER}/actions-runner 
+      - runner-data:/home/${RUNNER_USER}/actions-runner
+
+volumes:
+  runner-data: 
